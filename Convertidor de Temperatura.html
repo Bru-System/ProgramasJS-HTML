@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperaturas</title>
+</head>
+<body bgcolor="#09D4DE">
+    <table border="1" width="600" heigth="300" align="center">
+        <tr>
+        <td width="200" height="200"><font face="TimesNewRoman"><font size="5">
+            <nav><center>
+    <div class="container">
+        <div class="titulo">
+            <h1>Conversor de Temperaturas</h1>
+        </div>
+        <div class="main">
+            <div class="box">
+                <input type="text" name="texto" id="temperatura" placeholder="Ingresa un valor">
+            </div>
+            <div class="btn">
+                <input type="button" value="Fahrenheit a Celsius" onclick="fahrenheitACelsius()">
+                <input type="button" value="Kelvin a Fahrenheit" onclick="kelvinAFahrenheit()"><p></p>
+                <br><input type="button" value="Celsius a Kelvin" onclick="celsiusAKelvin()">
+                <input type="button" value="Celsius a Fahrenheit" onclick="celsiusAFahrenheit()"><p></p>
+                <br><input type="button" value="Fahrenheit a Kelvin" onclick="fahrenheitAKelvin()">
+                <input type="button" value="Kelvin a Celsius" onclick="kelvinACelsius()">
+            </div>
+        </div>
+        <div class="resultado">
+            <p>El resultado es: <br> <span id="resultado"></span></p>
+        </div>
+    </div>
+    <br><a href="Practicas JS.html">Regresar</a>
+</nav></center>
+</td>
+</table></font>
+<script>
+    function fahrenheitACelsius() {
+            let t = parseFloat(document.getElementById('temperatura').value);
+            let c = (5 * (t - 32)) / 9;
+            document.getElementById('resultado').innerHTML = c;
+        }
+        function celsiusAFahrenheit() {
+            let t = parseFloat(document.getElementById('temperatura').value);
+            let f = (9 * t) / 5 + 32;
+            document.getElementById('resultado').innerHTML = f;
+        }
+        function celsiusAKelvin() {
+            let t = parseFloat(document.getElementById('temperatura').value);
+            let k = t + 273.15;
+            document.getElementById('resultado').innerHTML = k;
+        }
+        function kelvinACelsius() {
+            let t = parseFloat(document.getElementById('temperatura').value);
+            let c = t - 273.15;
+            document.getElementById('resultado').innerHTML = c;
+        }
+        function kelvinAFahrenheit() {
+            let t = parseFloat(document.getElementById('temperatura').value);
+            let f = ((9 * (t - 273.15)) / 5) + 32;
+            console.log(resultado);
+            document.getElementById('resultado').innerHTML = f;
+        }
+        function fahrenheitAKelvin() {
+            let t = parseFloat(document.getElementById('temperatura').value);
+            let k = ((5 * (t - 32)) / 9) + 273.15;
+            document.getElementById('resultado').innerHTML = k;
+        }
+</script>
+
+</body>
+</html>
